@@ -1,5 +1,4 @@
 <?php
-
 include('./include.php');
 ?>
 
@@ -7,7 +6,15 @@ include('./include.php');
     <title>Accueil</title>
 </head>
 <body>
-    <h1>Accueil</h1>
-    <a href="page_admin.php"\>admin</a>
+    <div class="row_fluid">
+        <div class='span12'>
+            <h1>Accueil</h1>
+        </div>
+    </div>
+    <?php
+    if (Session::getLevel() == 1) {
+        echo '<a href="page_admin.php"\>admin</a>';
+    }
+    ?>
 </body>
 </html>
