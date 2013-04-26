@@ -1,7 +1,6 @@
 <?php
-//$connexion= new Connexion();
 include ('./include.php');
-//if (Session::getLevel()==1){
+// Il faut avoir le rang adminitrateur pour visualiser cette page.Sinon il est redirigé à la page accueil.
 if (Session::getLevel()!=1){
     header('location:accueil.php');
 }
@@ -12,9 +11,3 @@ if (Session::getLevel()!=1){
         <h1>Bonjour monsieur l'admin</h1>
     </div>
 </div>
-<?php
-//}
-//else
-//{ 
-//    header('location:accueil.php');
-//}

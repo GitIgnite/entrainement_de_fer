@@ -6,7 +6,10 @@ $connexion = new Connexion();
 
 //SESSION
 session_start();
-setcookie("login", $_SESSION['login'], (time() + 365 * 54 * 3600));
-setcookie("password", $_SESSION['password'], (time() + 365 * 54 * 3600));
 ?>
 <link rel="stylesheet" href="./css/design.css">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+
+
+

@@ -5,8 +5,14 @@
     <?php
     include('./include.php');
     global $connexion;
+    //Si une connexion est active, il regirige l'utilisateur à l'accueil
+    if(Session::isConnected()){
+        header('location:accueil.php');
+    }
+    
+    echo '<br><br><br><br><br><br><br><br><br><br>';
+    // Formulaire de connexion
     ?>
-    <br><br><br><br><br><br><br><br><br><br>
     <div id='1' class="row-fluid">
         <div class="span6 offset4" >
             <form action="login.php" method="post">
