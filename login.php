@@ -8,9 +8,9 @@
 
         if (isset($_POST) && !empty($_POST['login']) && !empty($_POST['password'])) {
             extract($_POST);
-            if (Session::login($login, $password))
+            if (Session::login($login, $password)){
                 header("location: accueil.php");
-            else {
+            }else {
                 header("location: index.php");
             }
         }
