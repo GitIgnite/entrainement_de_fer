@@ -1,8 +1,8 @@
 <?php
 include('./include.php');
 if (Session::isConnected()) {
-    setcookie("login", $_SESSION['login'], (time() + 365 * 54 * 3600));
-    setcookie("password", $_SESSION['password'], (time() + 365 * 54 * 3600));
+    setcookie("login", $_SESSION['login'], (time() + 365 * 54 * 3600),null, null, false, true);
+    setcookie("password", $_SESSION['password'], (time() + 365 * 54 * 3600),null, null, false, true);
 }
     ?>
 
