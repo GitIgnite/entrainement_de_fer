@@ -53,7 +53,7 @@ class Session {
     public static function login($login, $password) {
         global $connexion;
         //Requete SQL permettant d'aller chercher l'id et le rang dont le login est $login et le mot de passe est $password
-        $query = 'SELECT id, rang FROM utilisateur WHERE login="' . $login . '" and password="' . $password . '"';
+        $query = 'SELECT id, rang FROM utilisateur WHERE login="' . $login . '" and password="' . md5($password) . '"';
         $result = $connexion->query($query);
         //on prend la longueur du résultat ! si il y en a un alors --- Enchainement--- Sinon retourne false
         if (sizeof($result) == 1) {
@@ -61,7 +61,7 @@ class Session {
             session_start();
             $_SESSION["id"] = $result[0][0];
             $_SESSION["login"] = $login;
-            $_SESSION["password"] = $password;
+            $_SESSION["password"] = md5($password);
             $_SESSION["rang"] = $result[0][1];
             return true;
         }
