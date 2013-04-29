@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="./css/header.css">;
+
 <?php
 if (Session::isConnected()) {
     ?>
@@ -17,4 +18,4 @@ if (Session::isConnected()) {
 
         <?php
     }
-    ?>
+    ?> 
