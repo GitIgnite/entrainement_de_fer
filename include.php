@@ -3,6 +3,7 @@ include('./class/class_connexion.php');
 include('./class/class_session.php');
 include('./fct/fct_inscription.php');
 
+
 $connexion = new Connexion();
 
 //SESSION

@@ -26,10 +26,7 @@ function fct_formulaire_inscription() {
 function ajout_utilisateur($pseudo_ins, $password_ins, $rang_ins) {
     $pseudo_ins = $_POST['pseudo_ins'];
     $password_ins = $_POST['password_ins'];
-        //En cas d'inscription d'un utilisateur, le champ sera vide donc il prendra auto le rang 4
-    if ($_POST['rang_ins'] == "") {
-        $_POST['rang_ins'] = '4';
-    }
+
     $rang_ins = $_POST['rang_ins'];
 
 

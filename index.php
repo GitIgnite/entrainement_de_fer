@@ -16,12 +16,12 @@
     <div class="row_fluid">
         <div class='span12 offset1'>
             <?php
-            echo '<a href="inscription.php"\>Inscription</a><br>';
+                echo '<a href="inscription.php"\>Inscription</a><br>';
             ?>
         </div>
     </div>
     <?php
-    echo '<br><br><br><br><br><br><br><br><br><br>';
+        echo '<br><br><br><br><br><br><br><br><br><br>';
     ?>
     <div id='1' class="row-fluid">
         <div class="span6 offset4" >

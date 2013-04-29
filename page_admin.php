@@ -5,7 +5,9 @@ if (Session::getLevel() != 1) {
     header('location:accueil.php');
 }
 ?>
-
+<?php
+include ('./header.php');
+?>
 <div class="row_fluid">
     <div class='span12 offset8'>
         <h1>Bonjour monsieur l'admin</h1>

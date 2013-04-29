@@ -7,6 +7,9 @@ if (Session::isConnected()) {
         <title>Accueil</title>
     </head>
     <body>
+        <?php
+        include ('./header.php');
+        ?>
         <div class="row_fluid">
             <div class='span12 offset10'>
                 <h1>Accueil</h1>
