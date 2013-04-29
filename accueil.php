@@ -1,9 +1,6 @@
 <?php
 include('./include.php');
 if (Session::isConnected()) {
-    setcookie("login", $_SESSION['login'], (time() + 365 * 54 * 3600),null, null, false, true);
-    setcookie("password", $_SESSION['password'], (time() + 365 * 54 * 3600),null, null, false, true);
-}
     ?>
 
     <head>
@@ -23,10 +20,12 @@ if (Session::isConnected()) {
                 if (Session::getLevel() == 1) {
                     echo '<a href="page_admin.php"\>admin</a><br>';
                 }
-                echo '<a href="index.php"\>connexion</a><br>';
                 echo '<a href="logout.php"\>logout</a><br>';
                 ?>
             </div>
         </div>
     </body>
     </html>
+    <?php
+}
+?>

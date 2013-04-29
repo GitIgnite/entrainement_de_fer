@@ -9,8 +9,13 @@ if (Session::getLevel() != 1) {
 <div class="row_fluid">
     <div class='span12 offset8'>
         <h1>Bonjour monsieur l'admin</h1>
+    </div>
+</div>
+<div class="row_fluid">
+    <div class='span12 offset1'>
         <?php
-        echo '<a href=accueil.php>Accueil</a>';
+        echo '<a href=accueil.php>Accueil</a><br>';
+        echo '<a href=inscription.php>Inscription</a>';
         ?>
     </div>
 </div>

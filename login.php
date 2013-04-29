@@ -15,16 +15,16 @@
          */
         if (isset($_POST) && !empty($_POST['login']) && !empty($_POST['password'])) {
             extract($_POST);
-            if (Session::login($login, $password)){
+            if (Session::login($login, $password)) {
+                setcookie("login", $_SESSION['login'], (time() + 365 * 54 * 3600), null, null, false, true);
+                setcookie("password", $_SESSION['password'], (time() + 365 * 54 * 3600), null, null, false, true);
                 header("location: accueil.php");
-            }else {
+            } else {
                 header("location: index.php");
             }
-        }
-        else{
+        } else {
             header("location: index.php");
         }
-
         ?>
     </body>
 </html>
