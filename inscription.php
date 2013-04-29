@@ -1,9 +1,9 @@
 <head>
     <?php
     include ('include.php');
-    if (Session::getLevel() != 1) {
-        header('location:accueil.php');
-    }
+//    if (Session::getLevel() != 1) {
+//        header('location:accueil.php');
+//    }
     ?>
     <title>Incription</title>
 </head>
@@ -11,15 +11,23 @@
     <div class="row_fluid">
         <div class='span12 offset1'>
             <?php
-            echo '<a href="page_admin.php"\>page administrateur </a><br>';
+            if (Session::getLevel() == 1) {
+                echo '<a href="page_admin.php"\>page administrateur </a><br>';
+            } else {
+                echo '<a href="index.php"\>login</a><br>';
+            }
             ?>
         </div>
     </div>
     <div class="row-fluid">
         <div class="span6 offset4" >
-            <h1>Inscription d'un nouvel utilisateur</h1>
             <?php
-            echo formulaire_inscription();
+            if (Session::getLevel() == 1) {
+                echo '<h1>Inscription d\'un nouvel utilisateur</h1>';
+            } else {
+                echo '<h1>Inscription </h1>';
+            }
+            echo fct_formulaire_inscription();
             ?>
         </div>
     </div>

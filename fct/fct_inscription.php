@@ -1,16 +1,19 @@
 <?php
 
+// Formulaire d'inscription
 function fct_formulaire_inscription() {
-    $form='<form action = "enregistrement.php" method = "post">';
+    $form = '<form action = "enregistrement.php" method = "post">';
     $form.='<TABLE>';
     $form.='<tr><td>pseudo :</td><td><input type = "text" name = "pseudo_ins" /><br></td></tr>';
-    $form.='<tr><td>mot de passe :</td><td><input type = "password" name = "password_ins" /><br></td></tr>';  
-    $form.='<tr><td>rang :</td><td><SELECT name = "rang_ins" size = "1">
+    $form.='<tr><td>mot de passe :</td><td><input type = "password" name = "password_ins" /><br></td></tr>';
+    if (Session::getLevel() == 1) {
+        $form.='<tr><td>rang :</td><td><SELECT name = "rang_ins" size = "1">
                                         <OPTION>1
                                         <OPTION>2
                                         <OPTION>3
                                         <OPTION>4
                                     </SELECT><br></td></tr>';
+    }
     $form.='</TABLE><br>';
     $form.='<input type = "submit" value = " envoyer">';
     $form.='</form>';
@@ -23,7 +26,12 @@ function fct_formulaire_inscription() {
 function ajout_utilisateur($pseudo_ins, $password_ins, $rang_ins) {
     $pseudo_ins = $_POST['pseudo_ins'];
     $password_ins = $_POST['password_ins'];
+        //En cas d'inscription d'un utilisateur, le champ sera vide donc il prendra auto le rang 4
+    if ($_POST['rang_ins'] == "") {
+        $_POST['rang_ins'] = '4';
+    }
     $rang_ins = $_POST['rang_ins'];
+
 
     if (isset($_POST) && !empty($pseudo_ins) && !empty($password_ins) && !empty($rang_ins)) {
 
@@ -42,10 +50,15 @@ function ajout_utilisateur($pseudo_ins, $password_ins, $rang_ins) {
 
             $query = 'INSERT INTO utilisateur(login,password,rang) VALUES ("' . $pseudo_ins . '","' . md5($password_ins) . '","' . $rang_ins . '")';
             $connexion->exec($query);
-            echo '<h2>Utilisateur enregistré : </h2>';
+            if (Session::getLevel() == 1) {
+                echo '<h2>Utilisateur enregistré : </h2>';
+                echo 'rang : ' . $rang_ins . '<br>';
+            } else {
+                echo '<h2>vos identifiants: </h2>';
+            }
+
             echo 'pseudo : ' . $pseudo_ins . '<br>';
             echo 'mot de passe : ' . $password_ins . '<br>';
-            echo 'rang : ' . $rang_ins . '<br>';
         }
     } else {
 
