@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="./css/header.css">;
+
 
 <?php
 if (Session::isConnected()) {
@@ -13,9 +13,10 @@ if (Session::isConnected()) {
             <?php
             echo '<b>rang :</b> ' . $_SESSION['rang'] . '<br><br>';
             ?>
-
         </div>
-
+        <div class='span2'>
+            <strong><a href="logout.php"\>logout</a></strong>
+        </div>
         <?php
     }
     ?> 

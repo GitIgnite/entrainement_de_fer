@@ -4,3 +4,57 @@ h1{
 b{
     color: red;
 }
+strong
+{
+    background-color: #999;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-radius: 5px;
+}
+strong:hover
+{
+    background-color: #CCCCCC;
+    color: blue;
+    text-decoration:none;
+}
+h3
+{
+    text-align:center;
+}
+h3
+{
+    background-color:#999999;
+    color:red;
+    font-size:0.9em;
+    margin-bottom:0px;
+}
+#billet p
+{
+    background-color:#CCCCCC;
+    margin-top:0px;
+}
+#billet
+{
+    width:70%;
+    margin:auto;
+}
+ 
+a
+{
+    text-decoration: none;
+}
+
+textarea{
+    height: 50px;
+    width: 500px; 
+}
+#ajout_commentaire{
+    margin-top: 10px;
+
+}
+
+#submit{
+    margin-left: 20px;
+}
