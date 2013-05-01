@@ -11,13 +11,13 @@
             <?php
             include ('./header.php');
             ?>
-            <div class="container">
+            <div class="row">
                 <div class='span12'>
                     <h1>Accueil</h1>
                 </div>
             </div>
             <br><br><br><br><br>
-            <div class="container">
+            <div class="row">
                 <div class='span12 offset1'>
                     <?php
                     // pour visualiser ce lien, il faut avoir le rang 1 ---> adminitrateur
@@ -28,7 +28,7 @@
                 </div>
             </div>
 
-            <div class="container">
+            <div class="row">
                 <div class="span11" id="sujet">
                     <?php
                     echo afficher_billet();

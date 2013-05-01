@@ -2,7 +2,7 @@
 <?php
 if (Session::isConnected()) {
     ?>
-    <div class="container">
+    <div class="row">
         <div class='span3 offset4'>
             <?php
             echo '<b>Connecté en tant que :</b> ' . $_SESSION['login'] . ' ';

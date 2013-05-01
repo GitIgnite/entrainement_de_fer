@@ -9,12 +9,12 @@
     <?php
     include ('./header.php');
     ?>
-    <div class="conainer">
+    <div class="row">
         <div class='span12'>
             <h1>Bonjour monsieur l'admin</h1>
         </div>
     </div>
-    <div class="container">
+    <div class="row">
         <div class='span12 offset1'>
             <?php
             echo '<a href=accueil.php>Accueil</a><br>';

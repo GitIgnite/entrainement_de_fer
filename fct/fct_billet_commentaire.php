@@ -6,10 +6,14 @@ function afficher_billet() {
 
     $query = 'SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%i\') AS date_creation FROM billets ORDER BY date_creation ASC';
     $result = $connexion->query($query);
+    
     foreach ($result as $resultat) {
         echo '<h3>' . $resultat['titre'] . ' ';
-        echo $resultat['date_creation'] . '</h3>';
-        echo '<p>' . $resultat['contenu'] . '<br>';
+        echo $resultat['date_creation'] . ' ';
+        if (Session::getLevel()<3){
+            echo '<em><a href=supprimer_billet.php?billet=' . $resultat['id'] . '>Supprimer</a></em>';
+        }
+        echo '</h3><p>' . $resultat['contenu'] . '<br>';
         echo '<a href=commentaire.php?billet=' . $resultat['id'] . '>Commentaire(s)</a></p>';
     }
     
@@ -18,21 +22,24 @@ function afficher_billet() {
 //Fonction permettant d'afficher les commentaires
 Function afficher_commentaire() {
     global $connexion;
-    $_SESSION['billet']=$_GET['billet'];
-    $query = 'SELECT id, auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%i\') AS date_commentaire FROM commentaires WHERE id_billet="' . $_SESSION['billet'] . '" ORDER BY date_commentaire DESC ';
+    $query = 'SELECT id, auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%i\') AS date_commentaire FROM commentaires WHERE id_billet="' . $_GET['billet'] . '" ORDER BY date_commentaire DESC ';
     $result = $connexion->query($query);
     foreach ($result as $resultat) {
         echo '<h3>' . $resultat['auteur']. ' ';
-        echo $resultat['date_commentaire'] . '</h3>';
-        echo '<p>' . $resultat['commentaire'] . '</p>';
+        echo $resultat['date_commentaire'] . ' ';
+        if(Session::getLevel()< 3 or $resultat['auteur']==$_SESSION['login']){
+            echo '<em><a href=supprimer_commentaire.php?commentaire=' . $resultat['id'] . '>Supprimer</a></em>';            
+        }
+
+        echo '</h3><p>' . $resultat['commentaire'] . '</p>';
     }
 }
 
 // Fonction qui ajoute un nouveau commentaire
-function ajout_commentaire(){
+function ajout_commentaire($id){
     global $connexion;
     
-    $query='INSERT INTO commentaires(id_billet, auteur, commentaire, date_commentaire) VALUES ('.$_SESSION['billet'].',"'.$_SESSION['login'].'","'.$_POST['commentaire'].'","'.date("Y-m-d").' '.date("H:i:s").'")';
+    $query='INSERT INTO commentaires(id_billet, auteur, commentaire, date_commentaire) VALUES ('.$id.',"'.$_SESSION['login'].'","'.$_POST['commentaire'].'","'.date("Y-m-d").' '.date("H:i:s").'")';
     $connexion->exec($query);
 }
 
@@ -42,5 +49,24 @@ function ajout_sujet(){
     
     $query= 'INSERT INTO billets(titre,contenu,date_creation) VALUES ("'.$_POST['titre'].'","'.$_POST['contenu'].'","'.date("Y-m-d").' '.date("H:i:s").'")';
     $connexion->exec($query);
+    
+}
+
+// Supprimer Les Sujets (Seul l'administrateur peut).
+function supprimer_billet(){
+    global $connexion;
+    
+    $query='DELETE FROM commentaires WHERE id_billet='.$_GET['billet'].';';
+    $query.='DELETE FROM billets WHERE id='.$_GET['billet'];
+    $connexion->exec($query);
+}
+
+// Supprimer les commentaires 
+function supprimer_commentaire(){
+    global $connexion;
+    
+    $query='DELETE FROM commentaires where id='.$_GET['commentaire'];
+    $connexion->exec($query);
+    var_dump($query);
     
 }

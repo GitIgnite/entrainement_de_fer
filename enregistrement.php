@@ -1,4 +1,4 @@
-<div class="row_fluid">
+<div class="container">
     <div class='span12 offset1'>
         <?php
         include ('include.php');
