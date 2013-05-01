@@ -18,8 +18,7 @@ function afficher_billet() {
 //Fonction permettant d'afficher les commentaires
 Function afficher_commentaire() {
     global $connexion;
-    $_SESSION['billet']=$_GET['billet'];
-    $query = 'SELECT id, auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%i\') AS date_commentaire FROM commentaires WHERE id_billet="' . $_SESSION['billet'] . '" ORDER BY date_commentaire DESC ';
+    $query = 'SELECT id, auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%i\') AS date_commentaire FROM commentaires WHERE id_billet="' . $_GET['billet'] . '" ORDER BY date_commentaire DESC ';
     $result = $connexion->query($query);
     foreach ($result as $resultat) {
         echo '<h3>' . $resultat['auteur']. ' ';
