@@ -50,7 +50,7 @@
                 <div class='span12 offset3'>
                     <div id="ajout_commentaire">
                         <?php
-                        echo '<form action="ajout_commentaire.php" method="post">';
+                        echo '<form action="ajout_commentaire.php?billet='.$_GET['billet'].'" method="post">';
                         ?>
                         <textarea name='commentaire' ></textarea>
                         <?php
@@ -68,7 +68,7 @@
             <div class="row after">
                 <div <div class="span10 offset1" id="commentaire">
                         <?php
-                        echo afficher_commentaire();
+                        echo afficher_commentaire($_GET['billet']);
                         ?>
                     </div>
                 </div>
