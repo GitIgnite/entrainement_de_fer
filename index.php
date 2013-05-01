@@ -1,3 +1,4 @@
+<div class="container">
 <head>
     <title>Connexion</title>
 </head>
@@ -51,3 +52,4 @@
         </div>
 </body>
 </html>
+</div>

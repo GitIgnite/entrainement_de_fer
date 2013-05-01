@@ -4,7 +4,7 @@
 function afficher_billet() {
     global $connexion;
 
-    $query = 'SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%i\') AS date_creation FROM billets ORDER BY date_creation DESC';
+    $query = 'SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%i\') AS date_creation FROM billets ORDER BY date_creation ASC';
     $result = $connexion->query($query);
     foreach ($result as $resultat) {
         echo '<h3>' . $resultat['titre'] . ' ';

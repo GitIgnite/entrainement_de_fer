@@ -1,10 +1,9 @@
-
-
+<header>
 <?php
 if (Session::isConnected()) {
     ?>
-    <div class="row_fluid">
-        <div class='span3 offset12'>
+    <div class="container">
+        <div class='span3 offset4'>
             <?php
             echo '<b>Connecté en tant que :</b> ' . $_SESSION['login'] . ' ';
             ?>
@@ -15,8 +14,9 @@ if (Session::isConnected()) {
             ?>
         </div>
         <div class='span2'>
-            <strong><a href="logout.php"\>logout</a></strong>
+            <strong><a href="logout.php" \>logout</a></strong>
         </div>
         <?php
     }
-    ?> 
+    ?>
+</header>

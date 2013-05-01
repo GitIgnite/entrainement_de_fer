@@ -10,7 +10,7 @@ $connexion = new Connexion();
 session_start();
 ?>
 <link rel="stylesheet" href="./css/design.css">
-<link rel="stylesheet" href="./css/style.css">;
+<link rel="stylesheet" href="./css/style.css">
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
 
