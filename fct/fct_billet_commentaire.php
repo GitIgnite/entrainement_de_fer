@@ -16,9 +16,9 @@ function afficher_billet() {
 }
 
 //Fonction permettant d'afficher les commentaires
-Function afficher_commentaire() {
+function afficher_commentaire($id) {
     global $connexion;
-    $query = 'SELECT id, auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%i\') AS date_commentaire FROM commentaires WHERE id_billet="' . $_GET['billet'] . '" ORDER BY date_commentaire DESC ';
+    $query = 'SELECT id, auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%i\') AS date_commentaire FROM commentaires WHERE id_billet="' . $id . '" ORDER BY date_commentaire DESC ';
     $result = $connexion->query($query);
     foreach ($result as $resultat) {
         echo '<h3>' . $resultat['auteur']. ' ';
@@ -28,10 +28,10 @@ Function afficher_commentaire() {
 }
 
 // Fonction qui ajoute un nouveau commentaire
-function ajout_commentaire(){
+function ajout_commentaire($id){
     global $connexion;
     
-    $query='INSERT INTO commentaires(id_billet, auteur, commentaire, date_commentaire) VALUES ('.$_SESSION['billet'].',"'.$_SESSION['login'].'","'.$_POST['commentaire'].'","'.date("Y-m-d").' '.date("H:i:s").'")';
+    $query='INSERT INTO commentaires(id_billet, auteur, commentaire, date_commentaire) VALUES ('.$id.',"'.$_SESSION['login'].'","'.$_POST['commentaire'].'","'.date("Y-m-d").' '.date("H:i:s").'")';
     $connexion->exec($query);
 }
 
