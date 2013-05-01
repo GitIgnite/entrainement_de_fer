@@ -1,5 +1,6 @@
 <?php
 
+// Fonction permettant d'afficher les sujet
 function afficher_billet() {
     global $connexion;
 
@@ -14,6 +15,7 @@ function afficher_billet() {
     
 }
 
+//Fonction permettant d'afficher les commentaires
 Function afficher_commentaire() {
     global $connexion;
     $_SESSION['billet']=$_GET['billet'];
@@ -26,10 +28,19 @@ Function afficher_commentaire() {
     }
 }
 
+// Fonction qui ajoute un nouveau commentaire
 function ajout_commentaire(){
     global $connexion;
     
     $query='INSERT INTO commentaires(id_billet, auteur, commentaire, date_commentaire) VALUES ('.$_SESSION['billet'].',"'.$_SESSION['login'].'","'.$_POST['commentaire'].'","'.date("Y-m-d").' '.date("H:i:s").'")';
     $connexion->exec($query);
-    var_dump($query);
+}
+
+// Fonction qui ajoute un nouveau sujet
+function ajout_sujet(){
+    global $connexion;
+    
+    $query= 'INSERT INTO billets(titre,contenu,date_creation) VALUES ("'.$_POST['titre'].'","'.$_POST['contenu'].'","'.date("Y-m-d").' '.date("H:i:s").'")';
+    $connexion->exec($query);
+    
 }

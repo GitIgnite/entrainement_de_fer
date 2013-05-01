@@ -23,10 +23,7 @@ include('./include.php');
                 ?>
             </div>
         </div>
-        <?php
-//==============================AJAX pour l'ajout d'un commentaire===========================================
-//=========================================================================================================
-        ?>
+
         <!-- JavaScript : Afficher, Cache le formulaire d'ajout d'un commentaire -->
         <script type="text/javascript">
             function affCache(idDiv) {
@@ -41,7 +38,7 @@ include('./include.php');
 
         <div class="row">
             <div class='span11 offset11'>
-                <input type="button" onclick="affCache('ajout_commentaire');" value="Ajouter un commentaire" onClick="ajax_ajout_commentaire();"/>
+                <input type="button" onclick="affCache('ajout_commentaire');" value="Ajouter un commentaire" />
             </div>
         </div>
         <!-- ====================| FORMULAIRE |====================  -->
