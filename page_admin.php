@@ -1,3 +1,4 @@
+<!-- PAGE ADMINISTRATEUR POUR AJOUTER DES NOUVEAUX SUJETS OU INSCRIRE UN NOUVEL UTILISATEUR -->
 <div class="container">
     <?php
     include ('./include.php');
@@ -6,14 +7,17 @@
         header('location:accueil.php');
     }
     ?>
+    <!-- HEADER -->
     <?php
     include ('./header.php');
     ?>
+    <!-- TITRE -->
     <div class="row">
         <div class='span12'>
             <h1>Bonjour monsieur l'admin</h1>
         </div>
     </div>
+    <!-- LIENS -->
     <div class="row">
         <div class='span12 offset1'>
             <?php
@@ -22,6 +26,8 @@
             ?>
         </div>
     </div>
+    
+    <!-- AFFICHAGE DU FORMULAIRE POUR AJOUTER UN SUJET -->
     <div class="conainer">
         <div class='span12'>
             <h2>Ajout d'un nouveau sujet</h2>
@@ -38,6 +44,5 @@
 
             </form>
         </div>
-
     </div>
 </div>

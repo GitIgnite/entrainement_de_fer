@@ -1,4 +1,4 @@
-
+<!-- AFFICHAGE DES COMMENTAIRES D'UN SUJET -->
 <div class="container"
 
      <html>
@@ -12,13 +12,13 @@
             ?>
         </head>
         <body>
-
+            <!-- AFFICHAGE DU TITRE -->
             <div class="container">
                 <div class='span12'>
                     <h1>Commentaires</h1>
                 </div>
             </div>
-
+            <!-- AFFICHAGE DU LIEN -->
             <div class="container">
                 <div class='span12 offset1'>
                     <?php
@@ -66,7 +66,7 @@
             ?>
             <!-- ====================| AFFICHAGE DES COMMENTAIRES |====================  -->
             <div class="row after">
-                <div <div class="span10 offset1" id="commentaire">
+                <div class="span10 offset1" id="commentaire">
                         <?php
                         echo afficher_commentaire($_GET['billet']);
                         ?>

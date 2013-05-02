@@ -20,7 +20,6 @@ function fct_formulaire_inscription() {
     return $form;
 }
 
-//Problème d'enregistrement si le nom d'utilisateur est déjà pris ou non
 // Fonction : si les champs sont remplis, et si le nom d'utilisateur n'est pas pris alors
 // il peut faire l'enregistrement. Sinon il demande de le changer
 function ajout_utilisateur($pseudo_ins, $password_ins, $rang_ins) {

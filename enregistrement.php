@@ -1,3 +1,4 @@
+<!-- AJOUTER UN NOUVEL UTILISATEUR + AFICHAGE DE L'UTILISATEUR ENREGISTRE -->
 <div class="container">
     <div class='span12 offset1'>
         <?php

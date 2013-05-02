@@ -1,4 +1,4 @@
+<!-- SERT D'INTERMEDIAIRE POUR SUPPRIMER UN COMMENTAIRE APRES AVOIR CLIQUE SUR LE BOUTON SUPPRIMER DU COMMENTAIRE-->
 <?php
 include('./include.php');
 echo supprimer_commentaire();
-header('location:commentaire.php?billet='.$_SESSION['billet']);

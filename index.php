@@ -12,8 +12,9 @@
     }
 
     echo '<br><br>';
-    // Formulaire de connexion
-    ?>       
+    
+    ?>
+    <!-- AFFICHAGE DU LIEN -->
     <div class="row_fluid">
         <div class='span12 offset1'>
             <?php
@@ -24,6 +25,7 @@
     <?php
         echo '<br><br><br><br><br><br><br><br><br><br>';
     ?>
+    <!-- FORMULAIRE DE CONNEXION --> 
     <div id='1' class="row-fluid">
         <div class="span6 offset4" >
             <form action="login.php" method="post">

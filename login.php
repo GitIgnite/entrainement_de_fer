@@ -1,3 +1,4 @@
+<!-- CONNEXION AU SITE SI LES IDENTIFIANTS SONT BON SINON RETOUR AU FORMULAIRE DE CONNEXION -->
 <html>
     <head>
         <title>Accueil</title>

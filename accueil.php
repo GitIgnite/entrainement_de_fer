@@ -8,15 +8,20 @@
             <title>Accueil</title>
         </head>
         <body>
+            <!-- HEADER -->
             <?php
             include ('./header.php');
             ?>
+            
+            <!-- Titre -->
             <div class="row">
                 <div class='span12'>
                     <h1>Accueil</h1>
                 </div>
             </div>
             <br><br><br><br><br>
+            
+            <!-- AFFICHAGE DU LIEN -->
             <div class="row">
                 <div class='span12 offset1'>
                     <?php
@@ -28,6 +33,7 @@
                 </div>
             </div>
 
+            <!-- AFFICHAGE DES BILLET -->
             <div class="row">
                 <div class="span11" id="sujet">
                     <?php
