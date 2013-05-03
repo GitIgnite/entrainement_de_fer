@@ -2,14 +2,14 @@
 <div class="container">
     <head>
         <?php
-        include ('include.php');
+        include ('/include/include.php');
         ?>
         <title>Incription</title>
     </head>
     <body>
         <!-- HEADER -->
         <?php
-        include ('./header.php');
+        include ('./include/header.php');
         ?>
         <!-- TITRE -->
         <div class="container">

@@ -1,7 +1,7 @@
 <!-- PAGE ADMINISTRATEUR POUR AJOUTER DES NOUVEAUX SUJETS OU INSCRIRE UN NOUVEL UTILISATEUR -->
 <div class="container">
     <?php
-    include ('./include.php');
+    include ('./include/include.php');
 // Il faut avoir le rang adminitrateur pour visualiser cette page.Sinon il est redirigé à la page accueil.
     if (Session::getLevel() != 1) {
         header('location:accueil.php');
@@ -9,7 +9,7 @@
     ?>
     <!-- HEADER -->
     <?php
-    include ('./header.php');
+    include ('./include/header.php');
     ?>
     <!-- TITRE -->
     <div class="row">

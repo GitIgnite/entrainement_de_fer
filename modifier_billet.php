@@ -1,6 +1,6 @@
 <!-- PAGE POUR MODIFIER UN BILLET, JUSTE ACCECIBLE AUX UTILISATEUR AILLANT UN RANG ELEVE -->
 <?php
-include('./include.php');
+include('./include/include.php');
 if (Session::getLevel() > 2) {
     header('location:accueil.php');
 }

@@ -4,7 +4,7 @@
 </head>
 <body>
     <?php
-    include('./include.php');
+    include('./include/include.php');
     global $connexion;
     //Si une connexion est active, il regirige l'utilisateur à l'accueil
     if (Session::isConnected()) {

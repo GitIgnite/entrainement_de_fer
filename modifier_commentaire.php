@@ -1,6 +1,6 @@
 <!-- PAGE POUR MODIFIER UN COMMENTAIRE, JUSTE ACCECIBLE AUX UTILISATEUR AILLANT FAIT LE COMMENTAIRE OU AILLANT UN RANG ELEVE -->
 <?php
-include('./include.php');
+include('./include/include.php');
 ?>
 <!-- Affichage des billet à modifier -->
 <div class="container">

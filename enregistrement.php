@@ -2,7 +2,7 @@
 <div class="container">
     <div class='span12 offset1'>
         <?php
-        include ('include.php');
+        include ('/include/include.php');
         if (Session::getLevel() == 1) {
             echo '<a href="page_admin.php"\>page administrateur </a><br>';
             echo '<a href="inscription.php"\>Retour à l\'inscription </a><br>';

@@ -1,6 +1,6 @@
 <div class="container">
     <?php
-    include('./include.php');
+    include('./include/include.php');
     if (Session::isConnected()) {
         ?>
 
@@ -10,7 +10,7 @@
         <body>
             <!-- HEADER -->
             <?php
-            include ('./header.php');
+            include ('./include/header.php');
             ?>
             
             <!-- Titre -->

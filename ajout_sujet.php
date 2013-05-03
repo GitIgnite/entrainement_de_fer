@@ -1,6 +1,6 @@
 <!-- SERT D'INTERMEDIAIRE POUR AJOUTER UN SUJET -->
 <?php
-include('./include.php');
+include('./include/include.php');
 
 // Ajout d'un sujet
 echo ajout_sujet();

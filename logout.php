@@ -1,7 +1,7 @@
 <!-- AFFICHAGE LORS DE LA DECONNEXION D'UN UTILISATEUR -->
 <div class="container">
     <?php
-    include("./include.php");
+    include("./include/include.php");
     global $connexion;
     
     // Detruit la session qui était en cours

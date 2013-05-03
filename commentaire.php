@@ -5,10 +5,10 @@
         <head>
             <title>Commentaire</title>
             <?php
-            include('./include.php');
+            include('./include/include.php');
             ?>
             <?php
-            include ('./header.php');
+            include ('./include/header.php');
             ?>
         </head>
         <body>
