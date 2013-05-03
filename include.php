@@ -2,7 +2,8 @@
 include('./class/class_connexion.php');
 include('./class/class_session.php');
 include('./fct/fct_inscription.php');
-include('./fct/fct_billet_commentaire.php');
+include('./fct/fct_billet.php');
+include('./fct/fct_commentaire.php');
 
 $connexion = new Connexion();
 

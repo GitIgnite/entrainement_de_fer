@@ -21,7 +21,7 @@ include('./include.php');
     <div class = "row">
         <div class = "span10 offset1" >
             <?php
-            echo afficher_lien_retour($_GET['commentaire']);
+            echo '<a href=commentaire.php?billet=' . $_SESSION['id_billet'] . '>Retour</a><br><br>';
             ?>
         </div>
     </div>

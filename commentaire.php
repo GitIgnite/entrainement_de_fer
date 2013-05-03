@@ -31,6 +31,7 @@
             <script type="text/javascript">
                 function affCache(idDiv) {
                     var div = document.getElementById(idDiv);
+                    
                     if (div.style.display == "")
                         div.style.display = "none";
                     else
